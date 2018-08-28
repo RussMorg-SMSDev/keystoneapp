@@ -57,19 +57,20 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	enquiries: 'enquiries',
 	users: 'users',
+	manageTickets: 'tickets',
 });
 
 // Start Keystone to connect to your database and initialise the web server
 
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
-	console.log('----------------------------------------'
-	+ '\nWARNING: MISSING MAILGUN CREDENTIALS'
-	+ '\n----------------------------------------'
-	+ '\nYou have opted into email sending but have not provided'
-	+ '\nmailgun credentials. Attempts to send will fail.'
-	+ '\n\nCreate a mailgun account and add the credentials to the .env file to'
-	+ '\nset up your mailgun integration');
+	console.log('----------------------------------------' +
+		'\nWARNING: MISSING MAILGUN CREDENTIALS' +
+		'\n----------------------------------------' +
+		'\nYou have opted into email sending but have not provided' +
+		'\nmailgun credentials. Attempts to send will fail.' +
+		'\n\nCreate a mailgun account and add the credentials to the .env file to' +
+		'\nset up your mailgun integration');
 }
 
 
