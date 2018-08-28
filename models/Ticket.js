@@ -7,6 +7,7 @@ const Ticket = new keystone.List('Ticket', {
 		path: 'slug',
 		unique: true,
 	},
+	searchFields: 'description',
 });
 
 Ticket.add({
@@ -58,4 +59,9 @@ Ticket.add({
 
 Ticket.defaultColumns = 'title|20%, status|15%, createdBy, assignedTo, createdAt';
 Ticket.defaultSort = '-createdAt';
+
+Ticket.schema.virtual('url').get(function () {
+  return 'tickets/' + this.slug;
+});
+
 Ticket.register();
