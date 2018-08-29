@@ -1,2 +1,2 @@
 # keystoneapp
-Practice app, mase using keystone
+Practice app, made using keystone
