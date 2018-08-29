@@ -13,7 +13,9 @@ exports = module.exports = function (req, res) {
 
 	//Loads ticket
 	view.on('init', function (next) {
-		const q = keystone.list('Ticket').model.findOne({ slug: locals.data.title });
+		const q = keystone.list('Ticket').model.findOne({
+			slug: req.params.slug,
+		});
 
 		q.exec(function (err, result) {
 			if (result != null) {
