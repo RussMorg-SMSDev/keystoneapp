@@ -11,7 +11,7 @@ exports = module.exports = function (req, res) {
 		tickets: [],
 	};
 
-  //Laods tickets
+  //Loads tickets
 	view.on('init', function (next) {
 		const q = keystone.list('Ticket').model.find();
 
@@ -21,6 +21,6 @@ exports = module.exports = function (req, res) {
 		});
 	});
 
-    //Render view
+  //Render view
 	view.render('tickets/ticketlist');
 };
