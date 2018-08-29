@@ -5,13 +5,13 @@ exports = module.exports = function (req, res) {
 	const view = new keystone.View(req, res);
 	const locals = res.locals;
 
-    //sets highlighted item in navigation
+	//sets highlighted item in navigation
 	locals.section = 'tickets';
 	locals.data = {
 		tickets: [],
 	};
 
-  //Loads tickets
+	//Loads tickets
 	view.on('init', function (next) {
 		const q = keystone.list('Ticket').model.find();
 
@@ -21,6 +21,6 @@ exports = module.exports = function (req, res) {
 		});
 	});
 
-  //Render view
+	//Render view
 	view.render('tickets/ticketlist');
 };
